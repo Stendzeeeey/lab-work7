@@ -1,0 +1,28 @@
+Описать рекурсивную функцию Fact(N ) вещественного типа, вычисляющую значение факториала
+N!=1⋅2⋅...⋅N
+(N > 0 — параметр целого типа). С помощью этой функции вычислить факториалы пяти данных чисел.
+
+#include "pt4.h"
+using namespace std;
+
+int fact(int k, int &s) {
+    if (k >= 1) {
+        s = s * k;
+        fact(k - 1, s);
+    }
+    return s;
+}
+
+void Solve()
+{
+    Task("Recur1");
+    for (int i = 0; i < 5; i++)
+    {
+        int n;
+        int s = 1;
+        float otvet;
+        pt >> n;
+        otvet = fact(n, s);
+        pt << otvet;
+    }
+}
