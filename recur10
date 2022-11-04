@@ -1,0 +1,25 @@
+Описать рекурсивную функцию DigitSum(k) целого типа, которая находит сумму цифр числа k без использования циклов. с помощью функции найти сумму 5-ти чисел.
+#include "pt4.h"
+#include <cmath>
+using namespace std;
+
+int DigitSum(int k, int n, int s) {
+    if (k == 0)
+        return k;
+    else
+        n = (abs(k) / 10);
+        s = (abs(k) % 10) + DigitSum(n, k, s);
+        return s;
+}
+
+void Solve()
+{
+    Task("Recur10");
+    for (int i = 0; i < 5; i++)
+    {
+        int n, k = 0, s1 = 0, otvet;
+        pt >> n;
+        otvet = DigitSum(n, k, s1);
+        pt << otvet;
+    }
+}
