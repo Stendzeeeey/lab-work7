@@ -5,11 +5,19 @@
 #include "pt4.h"
 using namespace std;
 
-int N(int a, int b) {
-    if (b == 0)
-        return N(b, a % b);
-    else
-        return a;
+int gcd(int a, int b) {
+    while (a != 0 && b != 0)
+    {
+        if (a>b)
+        {
+            a %= b;
+        }
+        else
+        {
+            b %= a;
+        }
+     }
+     reti\urn (a + b);
 }
 
     void Solve()
@@ -17,5 +25,5 @@ int N(int a, int b) {
     Task("Recur9");
     int a, b, c, d;
     pt >> a >> b >> c >> d;
-    pt << N(a, b) << N(a, c) << N(a, d);
+    pt << gcd(a, b) << gcd(a, c) << gcd(a, d);
 }
